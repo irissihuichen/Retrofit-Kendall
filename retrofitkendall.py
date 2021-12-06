@@ -1,24 +1,12 @@
-!pip install geopandas matplotlib numpy shapely matplotlib folium pandas
-!pip install -q streamlit
-!pip install pydeck
-
-from shapely.geometry import Point, Polygon
-from gzip import GzipFile
-import geopandas as gpd
-import folium
-import matplotlib.pyplot as plt
-from geopandas import GeoDataFrame
-import pydeck as pdk
-
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
 import plotly.graph_objects as go
 
 
 # Read csv file
-df = pd.read_csv('kendall_new2.csv')
+fp = 'https://raw.githubusercontent.com/irissihuichen/Retrofit-Kendall/main/kendall_new2.csv'
+df = pd.read_csv(fp)
 
 # Calculate the differences of 3 index
 df['dif1_EUI'] = df['tEUI_base'] - df['tEUI_con']
